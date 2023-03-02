@@ -25,36 +25,16 @@ n=[[
 
 ----------------------------------------
 
+Changes = {'Released Hub!'}
+Added = {}
+Removed = {}
+
 Release = '1.0.0'
 Invite = 'MPZWtKxEcQ'
 
 pcall(function()
     GameName = game:GetService('MarketplaceService'):GetProductInfo(game.PlaceId).Name 
 end)
-
-----------------------------------------
-
-Changes = {'Released Hub!'}
-Added = {}
-Removed = {}
-
-function LoadHomePage(Tab)
-    Tab:CreateSection('Main')
-    local Welcome = Tab:CreateParagraph({Title = 'Welcome, '..game:GetService('Players').LocalPlayer.DisplayName, Content = ('Place: %s\nPlaceId: %i'):format(GameName, game.PlaceId)})
-    spawn(function() while wait() do
-        local Runtime = workspace.DistributedGameTime
-        local Minutes = math.floor(Runtime / 60)
-        local Hours = math.floor(Minutes / 60)
-        local Seconds = math.floor(Runtime % 60)
-        Welcome:Set({Title = 'Welcome, '..game:GetService('Players').LocalPlayer.Name, Content = ('Place: %s\nPlaceId: %i\nRun Time: %02i:%02i:%02i'):format(GameName, game.PlaceId, Hours, Minutes, Seconds)})
-    end end)
-    
-    Tab:CreateSection('Updates Log')
-
-    Tab:CreateParagraph({Title = 'Changes', Content = table.concat(Changes, ',\n')})
-    Tab:CreateParagraph({Title = 'Added', Content = table.concat(Added, ',\n')})
-    Tab:CreateParagraph({Title = 'Removed', Content = table.concat(Removed, ',\n')})
-end
 
 ----------------------------------------
 

@@ -15,8 +15,8 @@ return function(Tab)
     Tab:CreateParagraph({Title = 'Added', Content = table.concat(Added, ',\n')})
     Tab:CreateParagraph({Title = 'Removed', Content = table.concat(Removed, ',\n')})
     
-    Tab:CreateSection('Developers')
-    Tab:CreateParagraph({Title = "RVZ", Content = "Founder of the North Project"})
+    Tab:CreateSection('Credits')
+    Tab:CreateParagraph({Title = "RVZ", Content = "Owner of the North Project"})
     Tab:CreateParagraph({Title = "VisOn", Content = "Co-Owner & Head Developer"})
     Tab:CreateSection('Discord')
     Tab:CreateButton({
@@ -40,6 +40,4 @@ return function(Tab)
             end
         end
     })
-    Tab:CreateSection('Wall Of Shame')
-    Tab:CreateParagraph({Title = "ZoWare", Content = "Skidded a few functions as soon as got ZOO source (an old zo script I made, proof in discord)"})
 end

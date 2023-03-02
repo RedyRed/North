@@ -38,7 +38,7 @@ Changes = {'Released Hub!'}
 Added = {}
 Removed = {}
 
-function loadHomePage(Tab)
+function LoadHomePage(Tab)
     Tab:CreateSection('Updates Log')
 
     Tab:CreateParagraph({Title = 'Changes', Content = table.concat(Changes, ',\n')})

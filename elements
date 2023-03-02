@@ -17,7 +17,7 @@ return function(Tab)
     
     Tab:CreateSection('Credits')
     Tab:CreateParagraph({Title = "RVZ", Content = "Owner of the North Project"})
-    Tab:CreateParagraph({Title = "VisOn", Content = "Co-Owner & Head Developer"})
+    Tab:CreateParagraph({Title = "VisOn", Content = "Co-Owner & Mainly Helper"})
     Tab:CreateSection('Discord')
     Tab:CreateButton({
         Name = "discord.gg/MPZWtKxEcQ (click to copy)",

@@ -26,6 +26,25 @@ n=[[
 ----------------------------------------
 
 Release = '1.0.0'
+Invite = 'MPZWtKxEcQ'
+
+pcall(function()
+    GameName = game:GetService('MarketplaceService'):GetProductInfo(game.PlaceId).Name 
+end)
+
+----------------------------------------
+
+Changes = {'Released Hub!'}
+Added = {}
+Removed = {}
+
+function loadHomePage()
+    Tab:CreateSection('Updates Log')
+
+    Tab:CreateParagraph({Title = 'Changes', Content = table.concat(Changes, ',\n')})
+    Tab:CreateParagraph({Title = 'Added', Content = table.concat(Added, ',\n')})
+    Tab:CreateParagraph({Title = 'Removed', Content = table.concat(Removed, ',\n')})
+end
 
 ----------------------------------------
 

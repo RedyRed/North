@@ -2,5 +2,5 @@
 
 *Script:*
 ```lua
-loadstring('https://raw.githubusercontent.com/RedyRed/North/main/loader')()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/RedyRed/North/main/loader'))()
 ```

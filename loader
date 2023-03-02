@@ -40,11 +40,14 @@ Removed = {}
 
 function LoadHomePage(Tab)
     Tab:CreateSection('Main')
-    local Runtime = workspace.DistributedGameTime
-    local Minutes = math.floor(Runtime / 60)
-    local Hours = math.floor(Minutes / 60)
-    local Seconds = math.floor(Runtime % 60)
-    Tab:CreateParagraph({Title = 'Welcome, '..game:GetService('Players').LocalPlayer.Name, Content = ('Place: %s\nPlaceId: %i\nRun Time: %02i:%02i:%02i'):format(GameName, game.PlaceId, Hours, Minutes, Seconds)})
+    local Welcome = Tab:CreateParagraph({Title = 'Welcome, '..game:GetService('Players').LocalPlayer.Name, Content = ('Place: %s\nPlaceId: %i'):format(GameName, game.PlaceId)})
+    game:GetService('RunService').Stepped:connect(function()
+        local Runtime = workspace.DistributedGameTime
+        local Minutes = math.floor(Runtime / 60)
+        local Hours = math.floor(Minutes / 60)
+        local Seconds = math.floor(Runtime % 60)
+        Welcome:Set({Title = 'Welcome, '..game:GetService('Players').LocalPlayer.Name, Content = ('Place: %s\nPlaceId: %i\nRun Time: %02i:%02i:%02i'):format(GameName, game.PlaceId, Hours, Minutes, Seconds)})
+    end)
     
     Tab:CreateSection('Updates Log')
 

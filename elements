@@ -1,4 +1,4 @@
-function LoadGlobalGuiElements(Tab)
+return function(Tab)
     Tab:CreateSection('Main')
     local Welcome = Tab:CreateParagraph({Title = 'Welcome, '..game:GetService('Players').LocalPlayer.DisplayName, Content = ('Place: %s\nPlaceId: %i'):format(GameName, game.PlaceId)})
     spawn(function() while wait() do

@@ -47,6 +47,7 @@ function LoadHomePage(Tab)
 end
 
 ----------------------------------------
+if Debug then return end
 
 local url = 'https://raw.githubusercontent.com/RedyRed/North/main/Games/'..game.PlaceId
 

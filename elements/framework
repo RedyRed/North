@@ -12,16 +12,6 @@ end
 function humanoid(x)
     return x.Character and x.Character:FindFirstChild('Humanoid')
 end
-function getChildren(path, callback)
-    for i,v in pairs(path:GetChildren()) do
-        callback(i,v)
-    end
-end
-function getDescendants(path, callback)
-    for i,v in pairs(path:GetDescendants()) do
-        callback(i,v)
-    end
-end
 function getNil(name, classname)
     if getnilinstances then
         local instance

@@ -36,8 +36,6 @@ pcall(function()
     GameName = game:GetService('MarketplaceService'):GetProductInfo(game.PlaceId).Name 
 end)
 
--------------icons setup----------------
-loadstring(game:HttpGet('https://raw.githubusercontent.com/RedyRed/North/main/elements/icons'))()
 ----------------------------------------
 
 if Debug then return end

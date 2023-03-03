@@ -36,6 +36,8 @@ pcall(function()
     GameName = game:GetService('MarketplaceService'):GetProductInfo(game.PlaceId).Name 
 end)
 
+--------------Framework-----------------
+loadstring(game:HttpGet('https://raw.githubusercontent.com/RedyRed/North/main/elements/framework'))()
 ----------------------------------------
 
 if Debug then return end

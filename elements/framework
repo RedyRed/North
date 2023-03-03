@@ -1,0 +1,38 @@
+--Variables
+Players = game:GetService('Players')
+Player = Players.LocalPlayer
+UserInputService = game:GetService('UserInputService')
+TweenService = game:GetService('TweenService')
+CoreGui = game:GetService('CoreGui')
+
+--Functions
+function root(x)
+    return x.Character and x.Character:FindFirstChild('HumanoidRootPart')
+end
+function humanoid(x)
+    return x.Character and x.Character:FindFirstChild('Humanoid')
+end
+function getChildren(path, callback)
+    for i,v in pairs(path:GetChildren()) do
+        callback(i,v)
+    end
+end
+function getDescendants(path, callback)
+    for i,v in pairs(path:GetDescendants()) do
+        callback(i,v)
+    end
+end
+function getNil(name, classname)
+    if getnilinstances then
+        local instance
+        for i,v in pairs(getnilinstances()) do
+            if v.Name == tostring(name) and v.ClassName == tostring(classname) then
+                instance = v
+                break
+            end
+        end
+        return instance
+    else
+        return
+    end
+end

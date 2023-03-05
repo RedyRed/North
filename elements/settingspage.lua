@@ -37,13 +37,15 @@ SettingsTab:CreateKeybind({
     HoldToInteract = false,
     Flag = nil,
     Callback = function()
-        if RayfieldUI.Main.Visible then
-            Hidden = true
-            Hide()
-        else
-            Hidden = false
-            Unhide()
-        end
+        if Debounce then return end
+	    if Hidden then
+		    Hidden = false
+		    Minimised = false
+		    Unhide()
+	    else
+		    Hidden = true
+		    Hide()
+	    end
     end
 })
 

@@ -4,7 +4,7 @@ Tab:CreateSection("Status")
 local Welcome =
     Tab:CreateParagraph(
     {
-        Title = "Game Supported",
+        Title = "Game Supported:",
         Content = tostring((Universal and false) or (not Universal and false))
     }
 )

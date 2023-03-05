@@ -55,7 +55,7 @@ end) then
     if diff <= 24 then
         Rayfield:Notify({
             Title = "North Hub",
-            Content = 'WARNING: The game has been updated '..diff..' hours ago, which means that some functions may be patched by now. Are you sure you want to proceed?',
+            Content = 'WARNING: The game has been updated '..math.floor(diff)..' hours ago, which means that some functions may be patched by now. Are you sure you want to proceed?',
             Duration = 300,
             Image = 2804603863,
             Actions = {

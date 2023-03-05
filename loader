@@ -48,7 +48,34 @@ local url = 'https://raw.githubusercontent.com/RedyRed/North/main/Games/'..game.
 if pcall(function()
     game:HttpGet(url)
 end) then
-    loadstring(game:HttpGet(url))()
+    local updSec = tonumber(tostring(DateTime.fromIsoDate(game.MarketplaceService:GetProductInfo(game.PlaceId).Updated)))
+    local current = tonumber(tostring(DateTime.now()))
+
+    local diff = math.floor((current-updSec)/1000/60/60)
+    if diff <= 24 then
+        Rayfield:Notify({
+            Title = "North Hub",
+            Content = 'WARNING: The game has been updated '..diff..' hours ago, which means that some functions may be patched by now. Are you sure you want to proceed?',
+            Duration = math.huge,
+            Image = 2804603863,
+            Actions = {
+                x = {
+                    Name = 'Yes',
+                    Callback = function() 
+                        loadstring(game:HttpGet(url))()
+                    end
+                },
+                y = {
+                    Name = 'No',
+                    Callback = function()
+                        return
+                    end
+                }
+             }
+        })
+    else
+        loadstring(game:HttpGet(url))()
+    end
 else
     loadstring(game:HttpGet('https://raw.githubusercontent.com/RedyRed/North/main/universal'))()
 end

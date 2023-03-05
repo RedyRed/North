@@ -1,4 +1,4 @@
-return function()
+
     Tab = Window:CreateTab("Home", HomeIcon)
     
     Tab:CreateSection('Main')
@@ -42,4 +42,3 @@ return function()
             end
         end
     })
-end

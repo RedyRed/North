@@ -32,7 +32,7 @@ end
 
 -- Icons
 HomeIcon = 11396131982
-BlockIcon = 4483362458
+CubeIcon = 4483362458
 ShieldIcon = 7169354142
 SwordIcon = 7485051715
 GearIcon = 7059346373

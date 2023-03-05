@@ -71,5 +71,6 @@ end) then
         loadstring(game:HttpGet(url))()
     end
 else
+    Universal = true
     loadstring(game:HttpGet('https://raw.githubusercontent.com/RedyRed/North/main/universal'))()
 end

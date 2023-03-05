@@ -5,6 +5,7 @@ UserInputService = game:GetService('UserInputService')
 TweenService = game:GetService('TweenService')
 CoreGui = game:GetService('CoreGui')
 MarketplaceService = game:GetService('MarketplaceService')
+HttpService = game:GetService('HttpService')
 
 -- Functions
 function root(x)

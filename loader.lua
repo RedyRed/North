@@ -36,7 +36,8 @@ pcall(function()
     GameName = game:GetService('MarketplaceService'):GetProductInfo(game.PlaceId).Name 
 end)
 
---------------Framework & Library-----------------
+--------------Framework-----------------
+ManualHide = true
 loadstring(game:HttpGet('https://raw.githubusercontent.com/RedyRed/North/main/elements/framework.lua'))()
 ----------------------------------------
 

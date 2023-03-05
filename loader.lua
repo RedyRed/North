@@ -26,7 +26,7 @@ n=[[
 ----------------------------------------
 
 Changes = {}
-Added = {'Updated ZO'}
+Added = {'Updated ZO', 'Added Home', 'Added Settings'}
 Removed = {}
 
 Release = '1.1.0'

@@ -1,6 +1,6 @@
-Settings = Window:CreateTab("Settings", GearIcon)
+SettingsTab = Window:CreateTab("Settings", GearIcon)
 
-Settings:CreateSection("Main")
+SettingsTab:CreateSection("Main")
 
 local Settings = {
     HideKey = 'RightShift',
@@ -31,7 +31,7 @@ end
 LoadSettings()
 
 local KeybindKey = Settings.HideKey
-Settings:CreateKeybind({
+SettingsTab:CreateKeybind({
     Name = "Hide GUI Key",
     CurrentKeybind = KeybindKey,
     HoldToInteract = false,

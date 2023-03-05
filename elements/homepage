@@ -1,4 +1,6 @@
-return function(Tab)
+return function()
+    Tab = Window:CreateTab("Home", HomeIcon)
+    
     Tab:CreateSection('Main')
     local Welcome = Tab:CreateParagraph({Title = 'Welcome, '..game:GetService('Players').LocalPlayer.DisplayName, Content = ('Place: %s\nPlaceId: %i'):format(GameName, game.PlaceId)})
     spawn(function() while wait() do

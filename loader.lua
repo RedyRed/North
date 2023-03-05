@@ -38,7 +38,6 @@ end)
 
 --------------Framework & Library-----------------
 loadstring(game:HttpGet('https://raw.githubusercontent.com/RedyRed/North/main/elements/framework.lua'))()
-Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/RedyRed/Rayfield-Custom/main/source.lua'))()
 ----------------------------------------
 
 if Debug then return end
@@ -61,7 +60,7 @@ end) then
         end
         game.StarterGui:SetCore("SendNotification",{
             Title = 'North Hub',
-            Text = 'WARNING: The game has been updated '..math.floor(diff)..' hours ago. Proceed?',
+            Text = 'WARNING: The game was updated '..math.floor(diff)..' hours ago. Proceed?',
             Duration = 300,
             Icon = 'rbxassetid://12660955323',
             Callback = bindable,

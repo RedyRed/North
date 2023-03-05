@@ -4,6 +4,7 @@ Player = Players.LocalPlayer
 UserInputService = game:GetService('UserInputService')
 TweenService = game:GetService('TweenService')
 CoreGui = game:GetService('CoreGui')
+MarketplaceService = game:GetService('MarketplaceService')
 
 -- Functions
 function root(x)

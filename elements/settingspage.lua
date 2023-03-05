@@ -30,6 +30,7 @@ end
 
 LoadSettings()
 
+repeat wait() until Settings.CreateKeybind
 local KeybindKey = Settings.HideKey
 Settings:CreateKeybind({
     Name = "Hide GUI Key",

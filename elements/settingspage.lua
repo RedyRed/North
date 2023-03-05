@@ -3,16 +3,16 @@ Settings = Window:CreateTab("Settings", GearIcon)
 Settings:CreateSection("Main")
 
 local Settings = {
-    HideKey = 'RightShift'
+    HideKey = 'RightShift',
 }
 
 local function LoadSettings()
     if isfolder and readfile and isfile then
-        if isfile('North/universal.nrth') then
-            local Data = HttpService:JSONDecode(readfile('North/universal.nrth'))
+        if isfile('North/main.nrth') then
+            local Data = HttpService:JSONDecode(readfile('North/main.nrth'))
             for i,v in pairs(Settings) do
                 for i2,v2 in pairs(Data) do
-                    if string.match(tostring(i), tostring(i2)) then
+                    if string.match(tostring(i), tostring(i2)) and v2 ~= nil then
                         Settings[i] = v2
                     end
                 end
@@ -25,12 +25,11 @@ local function SaveSettings()
         makefolder('North')
     end
     local Data = HttpService:JSONEncode(Settings)
-    writefile('North/universal.nrth', Data)
+    writefile('North/main.nrth', Data)
 end
 
 LoadSettings()
 
-repeat wait() until Settings.CreateKeybind
 local KeybindKey = Settings.HideKey
 Settings:CreateKeybind({
     Name = "Hide GUI Key",
@@ -39,8 +38,10 @@ Settings:CreateKeybind({
     Flag = nil,
     Callback = function()
         if RayfieldUI.Main.Visible then
+            Hidden = true
             Hide()
         else
+            Hidden = false
             Unhide()
         end
     end

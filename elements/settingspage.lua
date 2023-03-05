@@ -1,3 +1,3 @@
-Tab = Window:CreateTab("Settings", GearIcon)
+Settings = Window:CreateTab("Settings", GearIcon)
 
-Tab:CreateSection("Main")
+Settings:CreateSection("Main")

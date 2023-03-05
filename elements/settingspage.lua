@@ -51,7 +51,7 @@ local KeybindKey = SettingsTab:CreateKeybind({
 spawn(function()
     while wait() do
         if KeybindKey.CurrentKeybind ~= Settings.HideKey then
-            Settings.HideKey = KeybindKey
+            Settings.HideKey = KeybindKey.CurrentKeybind
             SaveSettings()
         end
     end

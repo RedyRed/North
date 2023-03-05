@@ -1,5 +1,14 @@
 Tab = Window:CreateTab("Home", HomeIcon)
 
+Tab:CreateSection("Status")
+local Welcome =
+    Tab:CreateParagraph(
+    {
+        Title = "Game Supported",
+        Content = tostring((Universal and false) or (not Universal and false))
+    }
+)
+
 Tab:CreateSection("Main")
 local Welcome =
     Tab:CreateParagraph(

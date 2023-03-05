@@ -30,10 +30,9 @@ end
 
 LoadSettings()
 
-local KeybindKey = Settings.HideKey
-SettingsTab:CreateKeybind({
+local KeybindKey = SettingsTab:CreateKeybind({
     Name = "Hide GUI Key",
-    CurrentKeybind = KeybindKey,
+    CurrentKeybind = Settings.HideKey,
     HoldToInteract = false,
     Flag = nil,
     Callback = function()
@@ -51,7 +50,7 @@ SettingsTab:CreateKeybind({
 
 spawn(function()
     while wait() do
-        if KeybindKey ~= Settings.HideKey then
+        if KeybindKey.CurrentKeybind ~= Settings.HideKey then
             Settings.HideKey = KeybindKey
             SaveSettings()
         end

@@ -47,12 +47,24 @@ local url = 'https://raw.githubusercontent.com/RedyRed/North/main/Games/'..game.
 
 if pcall(function()
     game:HttpGet(url)
+end) or pcall(function()
+    url = 'https://raw.githubusercontent.com/RedyRed/North/main/Games/'..game.GameId
+    game:HttpGet(url)
 end) then
     local updSec = tonumber(tostring(DateTime.fromIsoDate(game.MarketplaceService:GetProductInfo(game.PlaceId).Updated)))
     local current = tonumber(tostring(DateTime.now()))
 
     local diff = (current-updSec)/1000/60/60
     if diff <= 24 then
+        if hookfunction then -- Anti GUI Detection
+            hookfunction(game:GetService("ContentProvider").PreloadAsync, function()
+                return nil
+            end)
+        else
+            warn('Error: Incapable exploit! (hookfunction missing)')
+            return
+        end
+
         local bindable = Instance.new("BindableFunction")
         function bindable.OnInvoke(response)
             if response == "Yes" then

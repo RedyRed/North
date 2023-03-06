@@ -9,10 +9,16 @@ HttpService = game:GetService('HttpService')
 
 -- Functions
 function root(x)
+    if typeof(x) == 'string' then
+        x = Players:FindFirstChild(x)
+    end
     x = x or Player
     return x.Character and x.Character:FindFirstChild('HumanoidRootPart')
 end
 function humanoid(x)
+    if typeof(x) == 'string' then
+        x = Players:FindFirstChild(x)
+    end
     x = x or Player
     return x.Character and x.Character:FindFirstChild('Humanoid')
 end

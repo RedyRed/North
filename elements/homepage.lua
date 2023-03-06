@@ -14,6 +14,15 @@ Tab:CreateParagraph(
     }
 )
 
+if Debug then
+    Tab:CreateParagraph(
+        {
+            Title = "Debug Mode:",
+            Content = 'true'
+        }
+    )
+end
+
 Tab:CreateSection("Main")
 local Welcome =
     Tab:CreateParagraph(

@@ -1,13 +1,13 @@
-Tab = Window:CreateTab("Home", HomeIcon)
+HomeTab = Window:CreateHomeTab("Home", HomeIcon)
 
-Tab:CreateSection("Status")
-Tab:CreateParagraph(
+HomeTab:CreateSection("Status")
+HomeTab:CreateParagraph(
     {
         Title = "Script Version:",
         Content = Release
     }
 )
-Tab:CreateParagraph(
+HomeTab:CreateParagraph(
     {
         Title = "Game Supported:",
         Content = tostring((Universal and false) or (not Universal and false))
@@ -15,7 +15,7 @@ Tab:CreateParagraph(
 )
 
 if Debug then
-    Tab:CreateParagraph(
+    HomeTab:CreateParagraph(
         {
             Title = "Debug Mode:",
             Content = 'true'
@@ -23,9 +23,9 @@ if Debug then
     )
 end
 
-Tab:CreateSection("Main")
+HomeTab:CreateSection("Main")
 local Welcome =
-    Tab:CreateParagraph(
+    HomeTab:CreateParagraph(
     {
         Title = "Welcome, " .. game:GetService("Players").LocalPlayer.DisplayName,
         Content = ("Place: %s\nPlaceId: %i"):format(GameName, game.PlaceId)
@@ -54,17 +54,17 @@ spawn(
     end
 )
 
-Tab:CreateSection("Updates Log")
+HomeTab:CreateSection("Updates Log")
 
-Tab:CreateParagraph({Title = "Changes", Content = table.concat(Changes, ",\n")})
-Tab:CreateParagraph({Title = "Added", Content = table.concat(Added, ",\n")})
-Tab:CreateParagraph({Title = "Removed", Content = table.concat(Removed, ",\n")})
+HomeTab:CreateParagraph({Title = "Changes", Content = HomeTable.concat(Changes, ",\n")})
+HomeTab:CreateParagraph({Title = "Added", Content = HomeTable.concat(Added, ",\n")})
+HomeTab:CreateParagraph({Title = "Removed", Content = HomeTable.concat(Removed, ",\n")})
 
-Tab:CreateSection("Credits")
-Tab:CreateParagraph({Title = "RVZ", Content = "Owner of the North Project"})
-Tab:CreateParagraph({Title = "VisOn", Content = "Co-Owner & Mainly Helper"})
-Tab:CreateSection("Discord")
-Tab:CreateButton(
+HomeTab:CreateSection("Credits")
+HomeTab:CreateParagraph({Title = "RVZ", Content = "Owner of the North Project"})
+HomeTab:CreateParagraph({Title = "VisOn", Content = "Co-Owner & Mainly Helper"})
+HomeTab:CreateSection("Discord")
+HomeTab:CreateButton(
     {
         Name = "discord.gg/MPZWtKxEcQ (click to copy)",
         Callback = function()

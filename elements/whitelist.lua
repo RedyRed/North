@@ -2,6 +2,11 @@ Whitelist = Window:CreateTab('Whitelist', PlayersIcon)
 
 Whitelisted = {}
 
+function CheckWl(plr)
+    plr = (plr:IsA('Player') and plr.Name) or plr
+    return table.find(Whitelisted, plr)
+end
+
 Whitelist:CreateSection('Whitelist Information')
 Whitelist:CreateParagraph({Title = 'Info', Content = 'Some functions may have "NW" tag, this means they will not work on whitelisted players'})
 

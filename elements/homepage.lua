@@ -56,9 +56,9 @@ spawn(
 
 HomeTab:CreateSection("Updates Log")
 
-HomeTab:CreateParagraph({Title = "Changes", Content = HomeTable.concat(Changes, ",\n")})
-HomeTab:CreateParagraph({Title = "Added", Content = HomeTable.concat(Added, ",\n")})
-HomeTab:CreateParagraph({Title = "Removed", Content = HomeTable.concat(Removed, ",\n")})
+HomeTab:CreateParagraph({Title = "Changes", Content = table.concat(Changes, ",\n")})
+HomeTab:CreateParagraph({Title = "Added", Content = table.concat(Added, ",\n")})
+HomeTab:CreateParagraph({Title = "Removed", Content = table.concat(Removed, ",\n")})
 
 HomeTab:CreateSection("Credits")
 HomeTab:CreateParagraph({Title = "RVZ", Content = "Owner of the North Project"})

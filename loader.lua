@@ -35,6 +35,7 @@ Invite = 'MPZWtKxEcQ'
 pcall(function()
     GameName = game:GetService('MarketplaceService'):GetProductInfo(game.PlaceId).Name 
 end)
+GameName = tostring(GameName)
 
 --------------Framework-----------------
 function LoadElement(element)

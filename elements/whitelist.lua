@@ -18,8 +18,8 @@ Whitelist:CreateInput({
     PlaceholderText = "Username",
     RemoveTextAfterFocusLost = true,
     Callback = function(Text)
-        for i,v in pairs(game.Players:GetPlayers()) do
-            if Text ~= '' and (v.Name:sub(1, #Text):lower() == Text:lower() or v.DisplayName:sub(1, #Text):lower() == Text:lower()) and v.Name ~= plr.Name then
+        for i,v in pairs(Players:GetPlayers()) do
+            if Text ~= '' and (v.Name:sub(1, #Text):lower() == Text:lower() or v.DisplayName:sub(1, #Text):lower() == Text:lower()) and v.Name ~= Player.Name then
                 if table.find(Whitelisted, v.Name) then
                     table.remove(Whitelisted, table.find(Whitelisted, v.Name))
                     wls:Set({Title = "Whitelist", Content = table.concat(Whitelisted, ', ')})
@@ -49,8 +49,8 @@ Whitelist:CreateInput({
     PlaceholderText = "Username",
     RemoveTextAfterFocusLost = true,
     Callback = function(Text)
-        for i,v in pairs(game.Players:GetPlayers()) do
-            if Text ~= '' and (v.Name:sub(1, #Text):lower() == Text:lower() or v.DisplayName:sub(1, #Text):lower() == Text:lower()) and v.Name ~= plr.Name then
+        for i,v in pairs(Players:GetPlayers()) do
+            if Text ~= '' and (v.Name:sub(1, #Text):lower() == Text:lower() or v.DisplayName:sub(1, #Text):lower() == Text:lower()) and v.Name ~= Player.Name then
                 Rayfield:Notify({
                     Title = "Whitelist",
                     Content = v.Name.."\'s Whitelist status: "..tostring((table.find(Whitelisted, v.Name) and true) or false),

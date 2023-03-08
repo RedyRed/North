@@ -37,8 +37,16 @@ pcall(function()
 end)
 
 --------------Framework-----------------
+function LoadElement(element)
+    local url = 'https://raw.githubusercontent.com/RedyRed/North/main/elements/'
+    if pcall(function()
+        game:HttpGet(url..tostring(element)..'.lua')
+    end) then
+        loadstring(game:HttpGet(url..tostring(element)..'.lua'))()
+    end
+end
+LoadElement('framework')
 ManualHide = true
-loadstring(game:HttpGet('https://raw.githubusercontent.com/RedyRed/North/main/elements/framework.lua'))()
 ----------------------------------------
 
 if Debug then return end
@@ -56,7 +64,7 @@ end) then
 
     local diff = (current-updSec)/1000/60/60
     if diff <= 24 then
-        if hookfunction then -- Anti GUI Detection
+        if hookfunction and hookmetamethod then -- Anti GUI Detection
             hookfunction(game:GetService("ContentProvider").PreloadAsync, function()
                 return nil
             end)

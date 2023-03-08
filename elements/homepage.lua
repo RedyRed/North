@@ -1,4 +1,4 @@
-HomeTab = Window:CreateHomeTab("Home", HomeIcon)
+HomeTab = Window:CreateTab("Home", HomeIcon)
 
 HomeTab:CreateSection("Status")
 HomeTab:CreateParagraph(

@@ -3,7 +3,7 @@ Whitelist = Window:CreateTab('Whitelist', PlayersIcon)
 Whitelisted = {}
 
 function CheckWl(plr)
-    plr = ((plr:IsA('Player') or plr:IsA('Model')) and plr.Name) or plr
+    plr = (typeof(plr) == 'string' and plr) or ((plr:IsA('Player') or plr:IsA('Model')) and plr.Name)
     return table.find(Whitelisted, plr)
 end
 
@@ -13,7 +13,7 @@ function UpdateList()
 end
 
 function RemoveWl(plr, update)
-    plr = ((plr:IsA('Player') or plr:IsA('Model')) and plr.Name) or plr
+    plr = (typeof(plr) == 'string' and plr) or ((plr:IsA('Player') or plr:IsA('Model')) and plr.Name)
     if CheckWl(plr) then
         table.remove(Whitelisted, table.find(Whitelisted, plr))
     end
@@ -22,7 +22,7 @@ function RemoveWl(plr, update)
     end
 end
 function AddWl(plr, update)
-    plr = ((plr:IsA('Player') or plr:IsA('Model')) and plr.Name) or plr
+    plr = (typeof(plr) == 'string' and plr) or ((plr:IsA('Player') or plr:IsA('Model')) and plr.Name)
     if not CheckWl(plr) then
         table.insert(Whitelisted, plr)
     end

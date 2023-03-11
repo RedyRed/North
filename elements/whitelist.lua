@@ -7,12 +7,35 @@ function CheckWl(plr)
     return table.find(Whitelisted, plr)
 end
 
+local wls
+function UpdateList()
+    wls:Set({Title = "Whitelist", Content = table.concat(Whitelisted, ', ')})
+end
+
+function RemoveWl(plr, update)
+    plr = (plr:IsA('Player') and plr.Name) or plr
+    if CheckWl(plr) then
+        table.remove(Whitelisted, table.find(Whitelisted, plr))
+    end
+    if update then
+        UpdateList()
+    end
+end
+function AddWl(plr, update)
+    plr = (plr:IsA('Player') and plr.Name) or plr
+    if not CheckWl(plr) then
+        table.insert(Whitelisted, plr)
+    end
+    if update then
+        UpdateList()
+    end
+end
+
 Whitelist:CreateSection('Whitelist Information')
 Whitelist:CreateParagraph({Title = 'Info', Content = 'Some functions may have "NW" tag, this means they will not work on whitelisted players'})
 
 Whitelist:CreateSection('Manipulate Whitelist')
 
-local wls
 Whitelist:CreateInput({
     Name = "Whitelist/Blacklist",
     PlaceholderText = "Username",
@@ -22,7 +45,7 @@ Whitelist:CreateInput({
             if Text ~= '' and (v.Name:sub(1, #Text):lower() == Text:lower() or v.DisplayName:sub(1, #Text):lower() == Text:lower()) and v.Name ~= Player.Name then
                 if table.find(Whitelisted, v.Name) then
                     table.remove(Whitelisted, table.find(Whitelisted, v.Name))
-                    wls:Set({Title = "Whitelist", Content = table.concat(Whitelisted, ', ')})
+                    UpdateList()
                     Rayfield:Notify({
                         Title = "Blacklist",
                         Content = "Successfully removed user from whitelist: "..tostring(v.Name),
@@ -31,7 +54,7 @@ Whitelist:CreateInput({
                     })
                 else
                     table.insert(Whitelisted, v.Name)
-                    wls:Set({Title = "Whitelist", Content = table.concat(Whitelisted, ', ')})
+                    UpdateList()
                     Rayfield:Notify({
                         Title = "Whitelist",
                         Content = "Successfully added user to whitelist: "..tostring(v.Name),
@@ -69,7 +92,7 @@ wls = Whitelist:CreateParagraph({Title = "Whitelist", Content = ""})
 Players.PlayerRemoving:connect(function(plr)
     if table.find(Whitelisted, plr.Name) then
         table.remove(Whitelisted, table.find(Whitelisted, plr.Name))
-        wls:Set({Title = "Whitelist", Content = table.concat(Whitelisted, ', ')})
+        UpdateList()
     end
 end)
 
@@ -77,7 +100,7 @@ Whitelist:CreateButton({
     Name = "Clear Whitelist",
     Callback = function()
         Whitelisted = {}
-        wls:Set({Title = "Whitelist", Content = table.concat(Whitelisted, ', ')})
+        UpdateList()
         Rayfield:Notify({
             Title = "Whitelist",
             Content = 'Whitelist has been cleared',

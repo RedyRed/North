@@ -23,6 +23,13 @@ function humanoid(x)
     x = x or Player
     return x.Character and x.Character:FindFirstChild('Humanoid')
 end
+function char(x)
+    if typeof(x) == 'string' then
+        x = Players:FindFirstChild(x)
+    end
+    x = x or Player
+    return x.Character
+end
 function getNil(name, classname)
     if getnilinstances then
         local instance

@@ -50,7 +50,7 @@ LoadElement('framework')
 ManualHide = true
 ----------------------------------------
 
-if getgenv().Debug then return end
+if getgenv().NorthDebug then return end
 
 local url = 'https://raw.githubusercontent.com/RedyRed/North/main/Games/'..game.PlaceId
 

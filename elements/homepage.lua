@@ -1,14 +1,5 @@
 HomeTab = Window:CreateTab("Home", HomeIcon)
 
-if getgenv().NorthDebug then
-    HomeTab:CreateParagraph(
-        {
-            Title = "Debug Mode:",
-            Content = 'true'
-        }
-    )
-end
-
 HomeTab:CreateSection("Main")
 local Welcome =
     HomeTab:CreateParagraph(

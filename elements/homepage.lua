@@ -1,20 +1,6 @@
 HomeTab = Window:CreateTab("Home", HomeIcon)
 
-HomeTab:CreateSection("Status")
-HomeTab:CreateParagraph(
-    {
-        Title = "Script Version:",
-        Content = Release
-    }
-)
-HomeTab:CreateParagraph(
-    {
-        Title = "Game Supported:",
-        Content = tostring((Universal and false) or (not Universal and false))
-    }
-)
-
-if Debug then
+if getgenv().NorthDebug then
     HomeTab:CreateParagraph(
         {
             Title = "Debug Mode:",
@@ -29,6 +15,12 @@ local Welcome =
     {
         Title = "Welcome, " .. game:GetService("Players").LocalPlayer.DisplayName,
         Content = ("Place: %s\nPlaceId: %i"):format(GameName, game.PlaceId)
+    }
+)
+HomeTab:CreateParagraph(
+    {
+        Title = "Status:",
+        Content = 'Script Version: '..Release..'\nGame Supported: '..tostring((Universal and false) or (not Universal and false))..((getgenv().NorthDebug and '\nDebug Mode: true') or '')
     }
 )
 spawn(

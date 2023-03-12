@@ -45,7 +45,7 @@ HomeTab:CreateParagraph({Title = "Removed", Content = table.concat(Removed, ",\n
 
 HomeTab:CreateSection("Credits")
 HomeTab:CreateParagraph({Title = "RVZ", Content = "Owner of the North Project"})
-HomeTab:CreateParagraph({Title = "VisOn", Content = "Co-Owner & Mainly Helper"})
+HomeTab:CreateParagraph({Title = "VisOn", Content = "Co-Owner & Python main"})
 HomeTab:CreateSection("Discord")
 HomeTab:CreateButton(
     {

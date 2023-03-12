@@ -25,11 +25,11 @@ n=[[
 
 ----------------------------------------
 
-Changes = {}
-Added = {'Updated ZO', 'Added Home', 'Added Settings'}
+Changes = {'Release'}
+Added = {}
 Removed = {}
 
-Release = '1.1.0'
+Release = '1.0.0'
 Invite = 'MPZWtKxEcQ'
 
 pcall(function()

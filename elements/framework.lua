@@ -11,24 +11,24 @@ RunService = game:GetService('RunService')
 -- Functions
 function root(x)
     if typeof(x) == 'string' then
-        x = Players:FindFirstChild(x)
+        x = Players:FindFirstChild(x) and Players[x].Character
     end
-    x = x or Player
-    return x.Character and x.Character:FindFirstChild('HumanoidRootPart')
+    x = x or Player.Character
+    return x and x:FindFirstChild('HumanoidRootPart')
 end
 function humanoid(x)
     if typeof(x) == 'string' then
-        x = Players:FindFirstChild(x)
+        x = Players:FindFirstChild(x) and Players[x].Character
     end
-    x = x or Player
-    return x.Character and x.Character:FindFirstChild('Humanoid')
+    x = x or Player.Character
+    return x and x:FindFirstChild('Humanoid')
 end
 function char(x)
     if typeof(x) == 'string' then
-        x = Players:FindFirstChild(x)
+        x = Players:FindFirstChild(x) and Players[x].Character
     end
-    x = x or Player
-    return x.Character
+    x = x or Player.Character
+    return x
 end
 function getNil(name, classname)
     if getnilinstances then

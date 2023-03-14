@@ -8,7 +8,8 @@ MarketplaceService = game:GetService('MarketplaceService')
 HttpService = game:GetService('HttpService')
 RunService = game:GetService('RunService')
 
--- Functions
+-->> Functions
+--character
 function root(x)
     if typeof(x) == 'string' then
         x = Players:FindFirstChild(x) and Players[x].Character
@@ -30,6 +31,7 @@ function char(x)
     x = x or Player.Character
     return x
 end
+--instances
 function getNil(name, classname)
     if getnilinstances then
         local instance
@@ -43,6 +45,19 @@ function getNil(name, classname)
     else
         return
     end
+end
+--misc
+function highlight(instance, properties)
+    local hl = Instance.new('Highlight')
+    hl.Parent = instance
+    for i,v in pairs(properties) do
+        if not pcall(function()
+            hl[i] = v
+        end) then
+            print('North Hub Error: function highlight(); '..i..' is not a valid property of Highlight')
+        end
+    end
+    return hl
 end
 
 -- Icons

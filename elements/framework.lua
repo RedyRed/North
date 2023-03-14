@@ -50,11 +50,13 @@ end
 function highlight(instance, properties)
     local hl = Instance.new('Highlight')
     hl.Parent = instance
-    for i,v in pairs(properties) do
-        if not pcall(function()
-            hl[i] = v
-        end) then
-            print('North Hub Error: function highlight(); '..i..' is not a valid property of Highlight')
+    if properties then
+        for i,v in pairs(properties) do
+            if not pcall(function()
+                hl[i] = v
+            end) then
+                print('North Hub Error: function highlight(); '..i..' is not a valid property of Highlight')
+            end
         end
     end
     return hl
